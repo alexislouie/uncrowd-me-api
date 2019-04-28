@@ -1,6 +1,7 @@
 "use strict";
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -12,7 +13,7 @@ const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 mongoose.Promise = global.Promise;
 
-const {PORT, DATABASE_URL} = require('./config');
+const {PORT, CLIENT_ORIGIN, DATABASE_URL} = require('./config');
 
 const app = express();
 
@@ -20,6 +21,11 @@ if (require.main === module) {
   app.use(morgan('common'));
 }
 
+app.use(
+  cors({
+      origin: CLIENT_ORIGIN
+  })
+);
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
