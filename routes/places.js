@@ -42,7 +42,7 @@ router.get('/', jsonParser, (req, res) => {
                     }
                 })
                 .catch(console.error)
-                .then(data => res.status(200).json(data))
+                .then(data => res.status(200).json(data.json.results))
         })
 })
 
