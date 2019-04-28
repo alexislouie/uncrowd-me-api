@@ -9,9 +9,9 @@ const jsonParser = bodyParser.json();
 const PLACES_API_KEY = process.env.PLACES_API_KEY;
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
-router.get('/', jsonParser, (req, res) => {
-    const { placeId } = req.body;
-
+router.get('/:placeId', jsonParser, (req, res) => {
+    const { placeId } = req.params;
+    // console.log(placeId);
     busy_hours(placeId, PLACES_API_KEY)
         .then(data => {
             console.log('data: ', data);
