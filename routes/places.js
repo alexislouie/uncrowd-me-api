@@ -36,7 +36,7 @@ router.get('/', jsonParser, (req, res) => {
                     console.log('res received');
                     if (res.status === 200) {
                         return res;
-                    }
+                    } 
                     else {
                         throw Error(`Request rejected with status ${res.status}`);
                     }

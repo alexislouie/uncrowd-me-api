@@ -11,11 +11,18 @@ const jwtAuth = passport.authenticate('jwt', { session: false });
 
 router.get('/:placeId', jsonParser, (req, res) => {
     const { placeId } = req.params;
-    // console.log(placeId);
+
     busy_hours(placeId, PLACES_API_KEY)
-        .then(data => {
-            console.log('data: ', data);
+        .then(res => {
+            if (res.status === 'ok' || res.status === 'error') {
+                return res;
+            } 
+            else {
+                throw Error(`Request rejected with status ${res.status}`);
+            }
         })
+        .then(data => res.status(200).json(data))
+        .catch(console.error)
 })
 
 
