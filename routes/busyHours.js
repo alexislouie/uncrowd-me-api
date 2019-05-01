@@ -14,10 +14,9 @@ router.get('/:placeId', jsonParser, (req, res) => {
 
     busy_hours(placeId, PLACES_API_KEY)
         .then(res => {
-            console.log('res: ', res);
-            if (res.status === 'ok') {
+            if (res.status === 'ok' || res.status === 'error') {
                 return res;
-            }
+            } 
             else {
                 throw Error(`Request rejected with status ${res.status}`);
             }
