@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: LsnFQMaYCzlbJKD5WA9CXBnATjWBvExs3aXHrXkQvc3TRtsbdBdgIfCz6+7gmgrsuh0dCh39z+4iYlfQHiwTdlDCQMSsuQyCPIvWe5h3+djCss1JBx0QMMNhruB8A//nOgJZeH4eB6BFonsSzqww8ohtPC/H+GUnCe0EjZyx0p8dHLlMVZ55DydlJ1pTwSV4RdL0tRp/1VkEhhIf6bsF7jaMpxsU3t8u4PrCB0fj8k8XHQjtnWcz/O9OOjHFjZIono6tDjbwFGdCTPhz/ZqOdVR3Tbc1UjzDMBNAyOzkEBZRJBC7n7NF5FbtbN9gl3OVIpDErHCbzL1kGJ2+RSyAcpFcuKHp306EhZ3bN1Qtvi7alKtqSBrkKadRgp2Nx7hS+wt4c4gSBaQ8pJdv9Qt1GcCSR1o2fQPv6noqYXTNoNqw1uZjeK+JCeGktLeCDInuQvSiS3c5jGmy0n7o72QKGBNd5LzvimAb+t79ko6TBwTYPjnUTwi4gfYJb8HXCn7cPneyFcuBxnw7vxPYz9/9X/2HbUZmUr42I1IUpHIQQ3iPBbSxvAjsn7yFVlcI6hUB8msJruAoKC3bKuvhnfZB5bcXEz84geoxzmPjkkbf7oVTOlQqYzSwe7HMCPKUjKcGDvYLRlLr9Zy1UE+Zq4cEXVwsOoy9T3OvMSVUu4dP2GY=
+  app: uncrowd-me-api
+  on:
+    repo: alouie1020/uncrowd-me-api
