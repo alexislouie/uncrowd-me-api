@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 15000 --exit"
+  },
   "dependencies": {
     "@google/maps": "^0.5.5",
     "bcryptjs": "^2.4.3",
