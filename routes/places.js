@@ -42,7 +42,13 @@ router.get('/', jsonParser, (req, res) => {
                     }
                 })
                 .catch(console.error)
-                .then(data => res.status(200).json(data.json.results))
+                .then(data => {
+                    const userCoordinates = {
+                        userCoordinates: coordinatesAsArray
+                    };
+                    data.json.results.push(userCoordinates);
+                    res.status(200).json(data.json.results);
+                })
         })
 })
 
