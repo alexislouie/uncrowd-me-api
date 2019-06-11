@@ -43,11 +43,11 @@ router.get('/', jsonParser, (req, res) => {
                 })
                 .catch(console.error)
                 .then(data => {
-                    const userCoordinates = {
+                    const resultsObj = {
+                        places: data.json.results,
                         userCoordinates: coordinatesAsArray
-                    };
-                    data.json.results.push(userCoordinates);
-                    res.status(200).json(data.json.results);
+                    }
+                    res.status(200).json(resultsObj);
                 })
         })
 })
