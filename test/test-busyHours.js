@@ -10,7 +10,7 @@ describe('busyHours API', function () {
     it('should 200 on GET requests', function () {
         return chai
             .request(app)
-            .get('/busyHours/ChIJUbYC4KFbwokRzm4s-s-xCfk')
+            .get('/busyHours/ChIJO0EmQfpbwokRGLOt2v1MNBY')
             .then(function (res) {
                 expect(res).to.have.status(200);
             });
