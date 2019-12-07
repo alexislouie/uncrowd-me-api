@@ -21,6 +21,7 @@ if (require.main === module) {
   app.use(morgan('common'));
 }
 
+app.options('*', cors())
 // app.use(
 //   cors({
 //       origin: CLIENT_ORIGIN

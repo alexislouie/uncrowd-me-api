@@ -14,6 +14,7 @@ const corsOptions = {
 const router = express.Router();
 const jsonParser = bodyParser.json();
 
+router.options('*', cors());
 router.get('/', cors(corsOptions), jsonParser, (req, res) => {
     const { query, location } = req.query;
     const radius = parseInt(req.query.radius);

@@ -15,6 +15,7 @@ const corsOptions = {
     origin: CLIENT_ORIGIN
 }
 
+router.options('*', cors());
 router.get('/:placeId', cors(corsOptions), jsonParser, (req, res) => {
     const { placeId } = req.params;
     busy_hours(placeId, PLACES_API_KEY)
