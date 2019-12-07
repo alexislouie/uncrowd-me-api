@@ -9,7 +9,7 @@ const jsonParser = bodyParser.json();
 const PLACES_API_KEY = process.env.PLACES_API_KEY;
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
-// const cors = require('cors');
+const cors = require('cors');
 // const CLIENT_ORIGIN = require('../config');
 // const corsOptions = {
 //     origin: CLIENT_ORIGIN

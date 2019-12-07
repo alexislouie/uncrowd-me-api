@@ -5,7 +5,7 @@ const googleMapsClient = require('@google/maps').createClient({
     Promise: Promise,
     key: PLACES_API_KEY
 });
-// const cors = require('cors');
+const cors = require('cors');
 // const CLIENT_ORIGIN = require('../config');
 // const corsOptions = {
 //     origin: CLIENT_ORIGIN
