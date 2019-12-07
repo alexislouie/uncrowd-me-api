@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const busy_hours = require('busy-hours');
+const busy_hours = require('../busyHoursAPI');
 
 const router = express.Router();
 const jsonParser = bodyParser.json();
