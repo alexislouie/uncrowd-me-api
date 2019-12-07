@@ -10,7 +10,10 @@ const googleMapsClient = require('@google/maps').createClient({
 const router = express.Router();
 const jsonParser = bodyParser.json();
 
-router.get('/', cors(), jsonParser, (req, res) => {
+const CLIENT_ORIGIN  = require('./config');
+const corsOptions = CLIENT_ORIGIN;
+
+router.get('/', cors(corsOptions), jsonParser, (req, res) => {
     const { query, location } = req.query;
     const radius = parseInt(req.query.radius);
 
