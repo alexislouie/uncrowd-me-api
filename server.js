@@ -21,13 +21,11 @@ if (require.main === module) {
   app.use(morgan('common'));
 }
 
-app.options('*', cors())
-app.use(cors());
-// app.use(
-//   cors({
-//       origin: CLIENT_ORIGIN
-//   })
-// );
+app.use(
+  cors({
+      origin: CLIENT_ORIGIN
+  })
+);
 
 passport.use(localStrategy);
 passport.use(jwtStrategy);

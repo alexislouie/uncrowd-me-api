@@ -9,14 +9,12 @@ const jsonParser = bodyParser.json();
 const PLACES_API_KEY = process.env.PLACES_API_KEY;
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
-const cors = require('cors');
-// const CLIENT_ORIGIN = require('../config');
-// const corsOptions = {
-//     origin: CLIENT_ORIGIN
-// }
+router.get('/', jsonParser, (req, res) => {
+    console.log('nice it works!');
+    res.send(status(200));
+})
 
-router.options('*', cors());
-router.get('/:placeId', cors(), jsonParser, (req, res) => {
+router.get('/:placeId', jsonParser, (req, res) => {
     const { placeId } = req.params;
     busy_hours(placeId, PLACES_API_KEY)
         .then(res => {
