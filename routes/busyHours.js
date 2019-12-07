@@ -11,7 +11,7 @@ const jwtAuth = passport.authenticate('jwt', { session: false });
 
 router.get('/', jsonParser, (req, res) => {
     console.log('nice it works!');
-    res.send(status(200));
+    res.status(200).json({message: 'nice it works!'});
 })
 
 router.get('/:placeId', jsonParser, (req, res) => {
