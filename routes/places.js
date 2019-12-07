@@ -1,8 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const PLACES_API_KEY = process.env.PLACES_API_KEY;
-
 const googleMapsClient = require('@google/maps').createClient({
     Promise: Promise,
     key: PLACES_API_KEY
@@ -11,7 +10,7 @@ const googleMapsClient = require('@google/maps').createClient({
 const router = express.Router();
 const jsonParser = bodyParser.json();
 
-router.get('/', jsonParser, (req, res) => {
+router.get('/', cors(), jsonParser, (req, res) => {
     const { query, location } = req.query;
     const radius = parseInt(req.query.radius);
 

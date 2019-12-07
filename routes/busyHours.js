@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const busy_hours = require('busy-hours');
+const cors = require('cors');
 
 const router = express.Router();
 const jsonParser = bodyParser.json();
@@ -14,7 +15,7 @@ const jwtAuth = passport.authenticate('jwt', { session: false });
 //     Promise: Promise
 // });
 
-router.get('/:placeId', jsonParser, (req, res) => {
+router.get('/:placeId', cors(), jsonParser, (req, res) => {
     const { placeId } = req.params;
 
     

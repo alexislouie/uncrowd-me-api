@@ -22,10 +22,9 @@ if (require.main === module) {
 }
 
 app.use(
-  // cors({
-  //     origin: CLIENT_ORIGIN
-  // })
-  cors()
+  cors({
+      origin: CLIENT_ORIGIN
+  })
 );
 
 passport.use(localStrategy);
