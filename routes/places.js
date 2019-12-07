@@ -5,17 +5,17 @@ const googleMapsClient = require('@google/maps').createClient({
     Promise: Promise,
     key: PLACES_API_KEY
 });
-const cors = require('cors');
-const CLIENT_ORIGIN = require('../config');
-const corsOptions = {
-    origin: CLIENT_ORIGIN
-}
+// const cors = require('cors');
+// const CLIENT_ORIGIN = require('../config');
+// const corsOptions = {
+//     origin: CLIENT_ORIGIN
+// }
 
 const router = express.Router();
 const jsonParser = bodyParser.json();
 
 router.options('*', cors());
-router.get('/', cors(corsOptions), jsonParser, (req, res) => {
+router.get('/', cors(), jsonParser, (req, res) => {
     const { query, location } = req.query;
     const radius = parseInt(req.query.radius);
 

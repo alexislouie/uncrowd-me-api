@@ -22,6 +22,7 @@ if (require.main === module) {
 }
 
 app.options('*', cors())
+app.use(cors());
 // app.use(
 //   cors({
 //       origin: CLIENT_ORIGIN
