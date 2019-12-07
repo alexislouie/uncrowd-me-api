@@ -15,7 +15,10 @@ const jwtAuth = passport.authenticate('jwt', { session: false });
 //     Promise: Promise
 // });
 
-router.get('/:placeId', cors(), jsonParser, (req, res) => {
+const CLIENT_ORIGIN  = require('./config');
+const corsOptions = CLIENT_ORIGIN;
+
+router.get('/:placeId', cors(corsOptions), jsonParser, (req, res) => {
     const { placeId } = req.params;
 
     
