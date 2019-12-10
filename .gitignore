@@ -60,4 +60,4 @@ typings/
 # misc
 .DS_Store
 
-bin/
+bin/.env
