@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
     lastName: { type: 'string', required: true },
     userName: { type: 'string', required: true, unique: true },
     password: { type: 'string', required: true },
-    savedSearches: [{ String }],
+    savedPlaces: [{ String }],
     // savedLocations: [{ type: 'string' }] // home?
 }, { toJSON: { virtuals: true }, toObject: { virtuals: true }});
 
@@ -17,7 +17,7 @@ userSchema.methods.serialize = function () {
         firstName: this.firstName,
         lastName: this.lastName,
         userName: this.userName,
-        savedSearches: this.savedPrograms
+        savedPlaces: this.savedPrograms
     };
 };
 
